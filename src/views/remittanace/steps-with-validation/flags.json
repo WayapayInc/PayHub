@@ -1,0 +1,1145 @@
+[
+  {
+    "index": 0,
+    "CurrencyName": "Albanian Lek",
+    "Symbol": "Lek",
+    "Flag": "https://flagpedia.net/data/flags/mini/al.png",
+    "CountryName": "Albania",
+    "Currency": "Albanian Lek",
+    "Code": "ALL"
+  },
+  {
+    "index": 1,
+    "CurrencyName": "Afghan Afghani",
+    "Symbol": "؋",
+    "Flag": "https://flagpedia.net/data/flags/mini/af.png",
+    "CountryName": "Afghanistan",
+    "Currency": "Afghan Afghani",
+    "Code": "AFN"
+  },
+  {
+    "index": 2,
+    "CurrencyName": "Argentine Peso",
+    "Symbol": "$",
+    "Flag": "https://flagpedia.net/data/flags/mini/ar.png",
+    "CountryName": "Argentina",
+    "Currency": "Argentine Peso",
+    "Code": "ARS"
+  },
+  {
+    "index": 3,
+    "CurrencyName": "Aruban Florin",
+    "Symbol": "ƒ",
+    "Flag": "https://flagpedia.net/data/flags/mini/aw.png",
+    "CountryName": "Aruba",
+    "Currency": "Aruban Florin",
+    "Code": "AWG"
+  },
+  {
+    "index": 4,
+    "CurrencyName": "Australian Dollar",
+    "Symbol": "$",
+    "Flag": "https://flagpedia.net/data/flags/mini/au.png",
+    "CountryName": "Australia",
+    "Currency": "Australian Dollar",
+    "Code": "AUD"
+  },
+  {
+    "index": 5,
+    "CurrencyName": "Azerbaijani Manat",
+    "Symbol": "₼",
+    "Flag": "https://flagpedia.net/data/flags/mini/az.png",
+    "CountryName": "Azerbaijan",
+    "Currency": "Azerbaijani Manat",
+    "Code": "AZN"
+  },
+  {
+    "index": 6,
+    "CurrencyName": "Bahamian Dollar",
+    "Symbol": "$",
+    "Flag": "https://flagpedia.net/data/flags/mini/bs.png",
+    "CountryName": "Bahamas",
+    "Currency": "Bahamian Dollar",
+    "Code": "BSD"
+  },
+  {
+    "index": 7,
+    "CurrencyName": "Barbadian Dollar",
+    "Symbol": "$",
+    "Flag": "https://flagpedia.net/data/flags/mini/bb.png",
+    "CountryName": "Barbados",
+    "Currency": "Barbadian Dollar",
+    "Code": "BBD"
+  },
+  {
+    "index": 8,
+    "CurrencyName": "Belarusian Ruble",
+    "Symbol": "p.",
+    "Flag": "https://flagpedia.net/data/flags/mini/by.png",
+    "CountryName": "Belarus",
+    "Currency": "Belarusian Ruble",
+    "Code": "BYN"
+  },
+  {
+    "index": 9,
+    "CurrencyName": "Belize Dollar",
+    "Symbol": "BZ$",
+    "Flag": "https://flagpedia.net/data/flags/mini/bz.png",
+    "CountryName": "Belize",
+    "Currency": "Belize Dollar",
+    "Code": "BZD"
+  },
+  {
+    "index": 10,
+    "CurrencyName": "Bermudian Dollar",
+    "Symbol": "$",
+    "Flag": "https://flagpedia.net/data/flags/mini/bm.png",
+    "CountryName": "Bermuda",
+    "Currency": "Bermudian Dollar",
+    "Code": "BMD"
+  },
+  {
+    "index": 11,
+    "CurrencyName": "Bolivian Boliviano",
+    "Symbol": "$b",
+    "Flag": "https://flagpedia.net/data/flags/mini/bo.png",
+    "CountryName": "Bolivia",
+    "Currency": "Bolivian Boliviano",
+    "Code": "BOB"
+  },
+  {
+    "index": 12,
+    "CurrencyName": "Bosnia and Herzegovina Convertible Mark",
+    "Symbol": "KM",
+    "Flag": "https://flagpedia.net/data/flags/mini/ba.png",
+    "CountryName": "Bosnia and Herzegovina",
+    "Currency": "Bosnia and Herzegovina Convertible Mark",
+    "Code": "BAM"
+  },
+  {
+    "index": 13,
+    "CurrencyName": "Botswana Pula",
+    "Symbol": "P",
+    "Flag": "https://flagpedia.net/data/flags/mini/bw.png",
+    "CountryName": "Botswana",
+    "Currency": "Botswana Pula",
+    "Code": "BWP"
+  },
+  {
+    "index": 14,
+    "CurrencyName": "Brazilian Real",
+    "Symbol": "R$",
+    "Flag": "https://flagpedia.net/data/flags/mini/br.png",
+    "CountryName": "Brazil",
+    "Currency": "Brazilian Real",
+    "Code": "BRL"
+  },
+  {
+    "index": 15,
+    "CurrencyName": "Brunei Dollar",
+    "Symbol": "$",
+    "Flag": "https://flagpedia.net/data/flags/mini/bn.png",
+    "CountryName": "Brunei",
+    "Currency": "Brunei Dollar",
+    "Code": "BND"
+  },
+  {
+    "index": 16,
+    "CurrencyName": "Bulgarian Lev",
+    "Symbol": "лв",
+    "Flag": "https://flagpedia.net/data/flags/mini/bg.png",
+    "CountryName": "Bulgaria",
+    "Currency": "Bulgarian Lev",
+    "Code": "BGN"
+  },
+  {
+    "index": 17,
+    "CurrencyName": "Cambodian Riel",
+    "Symbol": "៛",
+    "Flag": "https://flagpedia.net/data/flags/mini/kh.png",
+    "CountryName": "Cambodia",
+    "Currency": "Cambodian Riel",
+    "Code": "KHR"
+  },
+  {
+    "index": 18,
+    "CurrencyName": "Canadian Dollar",
+    "Symbol": "$",
+    "Flag": "https://flagpedia.net/data/flags/mini/ca.png",
+    "CountryName": "Canada",
+    "Currency": "Canadian Dollar",
+    "Code": "CAD"
+  },
+  {
+    "index": 19,
+    "CurrencyName": "Cayman Islands Dollar",
+    "Symbol": "$",
+    "Flag": "https://flagpedia.net/data/flags/mini/ky.png",
+    "CountryName": "Cayman Islands",
+    "Currency": "Cayman Islands Dollar",
+    "Code": "KYD"
+  },
+  {
+    "index": 20,
+    "CurrencyName": "Chilean Peso",
+    "Symbol": "$",
+    "Flag": "https://flagpedia.net/data/flags/mini/cl.png",
+    "CountryName": "Chile",
+    "Currency": "Chilean Peso",
+    "Code": "CLP"
+  },
+  {
+    "index": 21,
+    "CurrencyName": "Chinese Yuan",
+    "Symbol": "¥",
+    "Flag": "https://flagpedia.net/data/flags/mini/cn.png",
+    "CountryName": "China",
+    "Currency": "Chinese Yuan",
+    "Code": "CNY"
+  },
+  {
+    "index": 22,
+    "CurrencyName": "Colombian Peso",
+    "Symbol": "$",
+    "Flag": "https://flagpedia.net/data/flags/mini/co.png",
+    "CountryName": "Colombia",
+    "Currency": "Colombian Peso",
+    "Code": "COP"
+  },
+  {
+    "index": 23,
+    "CurrencyName": "Costa Rican Colon",
+    "Symbol": "₡",
+    "Flag": "https://flagpedia.net/data/flags/mini/cr.png",
+    "CountryName": "Costa Rica",
+    "Currency": "Costa Rican Colon",
+    "Code": "CRC"
+  },
+  {
+    "index": 24,
+    "CurrencyName": "Croatian Kuna",
+    "Symbol": "kn",
+    "Flag": "https://flagpedia.net/data/flags/mini/hr.png",
+    "CountryName": "Croatia",
+    "Currency": "Croatian Kuna",
+    "Code": "HRK"
+  },
+  {
+    "index": 25,
+    "CurrencyName": "Cuban Peso",
+    "Symbol": "₱",
+    "Flag": "https://flagpedia.net/data/flags/mini/cu.png",
+    "CountryName": "Cuba",
+    "Currency": "Cuban Peso",
+    "Code": "CUP"
+  },
+  {
+    "index": 26,
+    "CurrencyName": "Czech Koruna",
+    "Symbol": "Kč",
+    "Flag": "https://flagpedia.net/data/flags/mini/cz.png",
+    "CountryName": "Czech Republic",
+    "Currency": "Czech Koruna",
+    "Code": "CZK"
+  },
+  {
+    "index": 27,
+    "CurrencyName": "Danish Krone",
+    "Symbol": "kr",
+    "Flag": "https://flagpedia.net/data/flags/mini/dk.png",
+    "CountryName": "Denmark",
+    "Currency": "Danish Krone",
+    "Code": "DKK"
+  },
+  {
+    "index": 28,
+    "CurrencyName": "Dominican Peso",
+    "Symbol": "RD$",
+    "Flag": "https://flagpedia.net/data/flags/mini/do.png",
+    "CountryName": "Dominican Republic",
+    "Currency": "Dominican Peso",
+    "Code": "DOP"
+  },
+  {
+    "index": 29,
+    "CurrencyName": "Egyptian Pound",
+    "Symbol": "£",
+    "Flag": "https://flagpedia.net/data/flags/mini/eg.png",
+    "CountryName": "Egypt",
+    "Currency": "Egyptian Pound",
+    "Code": "EGP"
+  },
+  {
+    "index": 30,
+    "CurrencyName": "Salvadoran Colon",
+    "Symbol": "$",
+    "Flag": "https://flagpedia.net/data/flags/mini/sv.png",
+    "CountryName": "El Salvador",
+    "Currency": "Salvadoran Colon",
+    "Code": "SVC"
+  },
+  {
+    "index": 31,
+    "CurrencyName": "Estonian Kroon",
+    "Symbol": "KR",
+    "Flag": "https://flagpedia.net/data/flags/mini/ee.png",
+    "CountryName": "Estonia",
+    "Currency": "Estonian Kroon",
+    "Code": "EEK"
+  },
+  {
+    "index": 32,
+    "CurrencyName": "Euro",
+    "Symbol": "€",
+    "Flag": "/flags/euro.png",
+    "CountryName": "Eurozone",
+    "Currency": "Euro",
+    "Code": "EUR"
+  },
+  {
+    "index": 33,
+    "CurrencyName": "Fijian Dollar",
+    "Symbol": "$",
+    "Flag": "https://flagpedia.net/data/flags/mini/fj.png",
+    "CountryName": "Fiji",
+    "Currency": "Fijian Dollar",
+    "Code": "FJD"
+  },
+  {
+    "index": 34,
+    "CurrencyName": "Finnish Markka",
+    "Symbol": "mk",
+    "Flag": "https://flagpedia.net/data/flags/mini/fi.png",
+    "CountryName": "Finland",
+    "Currency": "Finnish Markka",
+    "Code": "FIM"
+  },
+  {
+    "index": 35,
+    "CurrencyName": "Euro",
+    "Symbol": "€",
+    "Flag": "https://flagpedia.net/data/flags/mini/fr.png",
+    "CountryName": "France",
+    "Currency": "Euro",
+    "Code": "EUR"
+  },
+  {
+    "index": 36,
+    "CurrencyName": "Gambian Dalasi",
+    "Symbol": "D",
+    "Flag": "https://flagpedia.net/data/flags/mini/gm.png",
+    "CountryName": "Gambia",
+    "Currency": "Gambian Dalasi",
+    "Code": "GMD"
+  },
+  {
+    "index": 37,
+    "CurrencyName": "Georgian Lari",
+    "Symbol": "ლ",
+    "Flag": "https://flagpedia.net/data/flags/mini/ge.png",
+    "CountryName": "Georgia",
+    "Currency": "Georgian Lari",
+    "Code": "GEL"
+  },
+  {
+    "index": 38,
+    "CurrencyName": "Euro",
+    "Symbol": "€",
+    "Flag": "https://flagpedia.net/data/flags/mini/de.png",
+    "CountryName": "Germany",
+    "Currency": "Euro",
+    "Code": "EUR"
+  },
+  {
+    "index": 39,
+    "CurrencyName": "Ghanaian Cedi",
+    "Symbol": "₵",
+    "Flag": "https://flagpedia.net/data/flags/mini/gh.png",
+    "CountryName": "Ghana",
+    "Currency": "Ghanaian Cedi",
+    "Code": "GHS"
+  },
+  {
+    "index": 40,
+    "CurrencyName": "Euro",
+    "Symbol": "€",
+    "Flag": "https://flagpedia.net/data/flags/mini/gr.png",
+    "CountryName": "Greece",
+    "Currency": "Euro",
+    "Code": "EUR"
+  },
+  {
+    "index": 41,
+    "CurrencyName": "Guatemalan Quetzal",
+    "Symbol": "Q",
+    "Flag": "https://flagpedia.net/data/flags/mini/gt.png",
+    "CountryName": "Guatemala",
+    "Currency": "Guatemalan Quetzal",
+    "Code": "GTQ"
+  },
+  {
+    "index": 42,
+    "CurrencyName": "Guyanese Dollar",
+    "Symbol": "$",
+    "Flag": "https://flagpedia.net/data/flags/mini/gy.png",
+    "CountryName": "Guyana",
+    "Currency": "Guyanese Dollar",
+    "Code": "GYD"
+  },
+  {
+    "index": 43,
+    "CurrencyName": "Honduran Lempira",
+    "Symbol": "L",
+    "Flag": "https://flagpedia.net/data/flags/mini/hn.png",
+    "CountryName": "Honduras",
+    "Currency": "Honduran Lempira",
+    "Code": "HNL"
+  },
+  {
+    "index": 44,
+    "CurrencyName": "Hong Kong Dollar",
+    "Symbol": "$",
+    "Flag": "https://flagpedia.net/data/flags/mini/hk.png",
+    "CountryName": "Hong Kong",
+    "Currency": "Hong Kong Dollar",
+    "Code": "HKD"
+  },
+  {
+    "index": 45,
+    "CurrencyName": "Hungarian Forint",
+    "Symbol": "Ft",
+    "Flag": "https://flagpedia.net/data/flags/mini/hu.png",
+    "CountryName": "Hungary",
+    "Currency": "Hungarian Forint",
+    "Code": "HUF"
+  },
+  {
+    "index": 46,
+    "CurrencyName": "Icelandic Krona",
+    "Symbol": "kr",
+    "Flag": "https://flagpedia.net/data/flags/mini/is.png",
+    "CountryName": "Iceland",
+    "Currency": "Icelandic Krona",
+    "Code": "ISK"
+  },
+  {
+    "index": 47,
+    "CurrencyName": "Indian Rupee",
+    "Symbol": "₹",
+    "Flag": "https://flagpedia.net/data/flags/mini/in.png",
+    "CountryName": "India",
+    "Currency": "Indian Rupee",
+    "Code": "INR"
+  },
+  {
+    "index": 48,
+    "CurrencyName": "Indonesian Rupiah",
+    "Symbol": "Rp",
+    "Flag": "https://flagpedia.net/data/flags/mini/id.png",
+    "CountryName": "Indonesia",
+    "Currency": "Indonesian Rupiah",
+    "Code": "IDR"
+  },
+  {
+    "index": 49,
+    "CurrencyName": "Iranian Rial",
+    "Symbol": "﷼",
+    "Flag": "https://flagpedia.net/data/flags/mini/ir.png",
+    "CountryName": "Iran",
+    "Currency": "Iranian Rial",
+    "Code": "IRR"
+  },
+  {
+    "index": 50,
+    "CurrencyName": "Iraqi Dinar",
+    "Symbol": "ع.د",
+    "Flag": "https://flagpedia.net/data/flags/mini/iq.png",
+    "CountryName": "Iraq",
+    "Currency": "Iraqi Dinar",
+    "Code": "IQD"
+  },
+  {
+    "index": 51,
+    "CurrencyName": "Euro",
+    "Symbol": "€",
+    "Flag": "https://flagpedia.net/data/flags/mini/ir.png",
+    "CountryName": "Ireland",
+    "Currency": "Euro",
+    "Code": "EUR"
+  },
+  {
+    "index": 52,
+    "CurrencyName": "Israeli New Shekel",
+    "Symbol": "₪",
+    "Flag": "https://flagpedia.net/data/flags/mini/il.png",
+    "CountryName": "Israel",
+    "Currency": "Israeli New Shekel",
+    "Code": "ILS"
+  },
+  {
+    "index": 53,
+    "CurrencyName": "Euro",
+    "Symbol": "€",
+    "Flag": "https://flagpedia.net/data/flags/mini/it.png",
+    "CountryName": "Italy",
+    "Currency": "Euro",
+    "Code": "EUR"
+  },
+  {
+    "index": 54,
+    "CurrencyName": "Jamaican Dollar",
+    "Symbol": "J$",
+    "Flag": "https://flagpedia.net/data/flags/mini/jm.png",
+    "CountryName": "Jamaica",
+    "Currency": "Jamaican Dollar",
+    "Code": "JMD"
+  },
+  {
+    "index": 55,
+    "CurrencyName": "Japanese Yen",
+    "Symbol": "¥",
+    "Flag": "https://flagpedia.net/data/flags/mini/jp.png",
+    "CountryName": "Japan",
+    "Currency": "Japanese Yen",
+    "Code": "JPY"
+  },
+  {
+    "index": 56,
+    "CurrencyName": "Jordanian Dinar",
+    "Symbol": "د.ا",
+    "Flag": "https://flagpedia.net/data/flags/mini/jo.png",
+    "CountryName": "Jordan",
+    "Currency": "Jordanian Dinar",
+    "Code": "JOD"
+  },
+  {
+    "index": 57,
+    "CurrencyName": "Kazakhstani Tenge",
+    "Symbol": "₸",
+    "Flag": "https://flagpedia.net/data/flags/mini/kz.png",
+    "CountryName": "Kazakhstan",
+    "Currency": "Kazakhstani Tenge",
+    "Code": "KZT"
+  },
+  {
+    "index": 58,
+    "CurrencyName": "Kenyan Shilling",
+    "Symbol": "KSh",
+    "Flag": "https://flagpedia.net/data/flags/mini/ke.png",
+    "CountryName": "Kenya",
+    "Currency": "Kenyan Shilling",
+    "Code": "KES"
+  },
+  {
+    "index": 59,
+    "CurrencyName": "Kuwaiti Dinar",
+    "Symbol": "د.ك",
+    "Flag": "https://flagpedia.net/data/flags/mini/kw.png",
+    "CountryName": "Kuwait",
+    "Currency": "Kuwaiti Dinar",
+    "Code": "KWD"
+  },
+  {
+    "index": 60,
+    "CurrencyName": "Kyrgyzstani Som",
+    "Symbol": "с",
+    "Flag": "https://flagpedia.net/data/flags/mini/kg.png",
+    "CountryName": "Kyrgyzstan",
+    "Currency": "Kyrgyzstani Som",
+    "Code": "KGS"
+  },
+  {
+    "index": 61,
+    "CurrencyName": "Lao Kip",
+    "Symbol": "₭",
+    "Flag": "https://flagpedia.net/data/flags/mini/la.png",
+    "CountryName": "Laos",
+    "Currency": "Lao Kip",
+    "Code": "LAK"
+  },
+  {
+    "index": 62,
+    "CurrencyName": "Latvian Lats",
+    "Symbol": "Ls",
+    "Flag": "https://flagpedia.net/data/flags/mini/lv.png",
+    "CountryName": "Latvia",
+    "Currency": "Latvian Lats",
+    "Code": "LVL"
+  },
+  {
+    "index": 63,
+    "CurrencyName": "Lebanese Pound",
+    "Symbol": "£",
+    "Flag": "https://flagpedia.net/data/flags/mini/lb.png",
+    "CountryName": "Lebanon",
+    "Currency": "Lebanese Pound",
+    "Code": "LBP"
+  },
+  {
+    "index": 64,
+    "CurrencyName": "Lesotho Loti",
+    "Symbol": "M",
+    "Flag": "https://flagpedia.net/data/flags/mini/ls.png",
+    "CountryName": "Lesotho",
+    "Currency": "Lesotho Loti",
+    "Code": "LSL"
+  },
+  {
+    "index": 65,
+    "CurrencyName": "Lithuanian Litas",
+    "Symbol": "Lt",
+    "Flag": "https://flagpedia.net/data/flags/mini/lt.png",
+    "CountryName": "Lithuania",
+    "Currency": "Lithuanian Litas",
+    "Code": "LTL"
+  },
+  {
+    "index": 66,
+    "CurrencyName": "Euro",
+    "Symbol": "€",
+    "Flag": "https://flagpedia.net/data/flags/mini/lu.png",
+    "CountryName": "Luxembourg",
+    "Currency": "Euro",
+    "Code": "EUR"
+  },
+  {
+    "index": 67,
+    "CurrencyName": "Macedonian Denar",
+    "Symbol": "ден",
+    "Flag": "https://flagpedia.net/data/flags/mini/mk.png",
+    "CountryName": "North Macedonia",
+    "Currency": "Macedonian Denar",
+    "Code": "MKD"
+  },
+  {
+    "index": 68,
+    "CurrencyName": "Malawian Kwacha",
+    "Symbol": "MK",
+    "Flag": "https://flagpedia.net/data/flags/mini/mw.png",
+    "CountryName": "Malawi",
+    "Currency": "Malawian Kwacha",
+    "Code": "MWK"
+  },
+  {
+    "index": 69,
+    "CurrencyName": "Malaysian Ringgit",
+    "Symbol": "RM",
+    "Flag": "https://flagpedia.net/data/flags/mini/my.png",
+    "CountryName": "Malaysia",
+    "Currency": "Malaysian Ringgit",
+    "Code": "MYR"
+  },
+  {
+    "index": 70,
+    "CurrencyName": "Mexican Peso",
+    "Symbol": "$",
+    "Flag": "https://flagpedia.net/data/flags/mini/mx.png",
+    "CountryName": "Mexico",
+    "Currency": "Mexican Peso",
+    "Code": "MXN"
+  },
+  {
+    "index": 71,
+    "CurrencyName": "Moldovan Leu",
+    "Symbol": "L",
+    "Flag": "https://flagpedia.net/data/flags/mini/md.png",
+    "CountryName": "Moldova",
+    "Currency": "Moldovan Leu",
+    "Code": "MDL"
+  },
+  {
+    "index": 72,
+    "CurrencyName": "Mongolian Tugrik",
+    "Symbol": "₮",
+    "Flag": "https://flagpedia.net/data/flags/mini/mn.png",
+    "CountryName": "Mongolia",
+    "Currency": "Mongolian Tugrik",
+    "Code": "MNT"
+  },
+  {
+    "index": 73,
+    "CurrencyName": "Moroccan Dirham",
+    "Symbol": "د.م.",
+    "Flag": "https://flagpedia.net/data/flags/mini/ma.png",
+    "CountryName": "Morocco",
+    "Currency": "Moroccan Dirham",
+    "Code": "MAD"
+  },
+  {
+    "index": 74,
+    "CurrencyName": "Mozambican Metical",
+    "Symbol": "MT",
+    "Flag": "https://flagpedia.net/data/flags/mini/mz.png",
+    "CountryName": "Mozambique",
+    "Currency": "Mozambican Metical",
+    "Code": "MZN"
+  },
+  {
+    "index": 75,
+    "CurrencyName": "Namibian Dollar",
+    "Symbol": "$",
+    "Flag": "https://flagpedia.net/data/flags/mini/na.png",
+    "CountryName": "Namibia",
+    "Currency": "Namibian Dollar",
+    "Code": "NAD"
+  },
+  {
+    "index": 76,
+    "CurrencyName": "Nepalese Rupee",
+    "Symbol": "₨",
+    "Flag": "https://flagpedia.net/data/flags/mini/np.png",
+    "CountryName": "Nepal",
+    "Currency": "Nepalese Rupee",
+    "Code": "NPR"
+  },
+  {
+    "index": 77,
+    "CurrencyName": "Euro",
+    "Symbol": "€",
+    "Flag": "https://flagpedia.net/data/flags/mini/nl.png",
+    "CountryName": "Netherlands",
+    "Currency": "Euro",
+    "Code": "EUR"
+  },
+  {
+    "index": 78,
+    "CurrencyName": "New Zealand Dollar",
+    "Symbol": "$",
+    "Flag": "https://flagpedia.net/data/flags/mini/nz.png",
+    "CountryName": "New Zealand",
+    "Currency": "New Zealand Dollar",
+    "Code": "NZD"
+  },
+  {
+    "index": 79,
+    "CurrencyName": "Nicaraguan Cordoba",
+    "Symbol": "C$",
+    "Flag": "https://flagpedia.net/data/flags/mini/ni.png",
+    "CountryName": "Nicaragua",
+    "Currency": "Nicaraguan Cordoba",
+    "Code": "NIO"
+  },
+  {
+    "index": 80,
+    "CurrencyName": "Nigerian Naira",
+    "Symbol": "₦",
+    "Flag": "https://flagpedia.net/data/flags/mini/ng.png",
+    "CountryName": "Nigeria",
+    "Currency": "Nigerian Naira",
+    "Code": "NGN"
+  },
+  {
+    "index": 81,
+    "CurrencyName": "Norwegian Krone",
+    "Symbol": "kr",
+    "Flag": "https://flagpedia.net/data/flags/mini/no.png",
+    "CountryName": "Norway",
+    "Currency": "Norwegian Krone",
+    "Code": "NOK"
+  },
+  {
+    "index": 82,
+    "CurrencyName": "Omani Rial",
+    "Symbol": "ر.ع.",
+    "Flag": "https://flagpedia.net/data/flags/mini/om.png",
+    "CountryName": "Oman",
+    "Currency": "Omani Rial",
+    "Code": "OMR"
+  },
+  {
+    "index": 83,
+    "CurrencyName": "Pakistani Rupee",
+    "Symbol": "₨",
+    "Flag": "https://flagpedia.net/data/flags/mini/pk.png",
+    "CountryName": "Pakistan",
+    "Currency": "Pakistani Rupee",
+    "Code": "PKR"
+  },
+  {
+    "index": 84,
+    "CurrencyName": "Panamanian Balboa",
+    "Symbol": "B/.",
+    "Flag": "https://flagpedia.net/data/flags/mini/pa.png",
+    "CountryName": "Panama",
+    "Currency": "Panamanian Balboa",
+    "Code": "PAB"
+  },
+  {
+    "index": 85,
+    "CurrencyName": "Papua New Guinean Kina",
+    "Symbol": "K",
+    "Flag": "https://flagpedia.net/data/flags/mini/pg.png",
+    "CountryName": "Papua New Guinea",
+    "Currency": "Papua New Guinean Kina",
+    "Code": "PGK"
+  },
+  {
+    "index": 86,
+    "CurrencyName": "Paraguayan Guarani",
+    "Symbol": "₲",
+    "Flag": "https://flagpedia.net/data/flags/mini/py.png",
+    "CountryName": "Paraguay",
+    "Currency": "Paraguayan Guarani",
+    "Code": "PYG"
+  },
+  {
+    "index": 87,
+    "CurrencyName": "Peruvian Nuevo Sol",
+    "Symbol": "S/.",
+    "Flag": "https://flagpedia.net/data/flags/mini/pe.png",
+    "CountryName": "Peru",
+    "Currency": "Peruvian Nuevo Sol",
+    "Code": "PEN"
+  },
+  {
+    "index": 88,
+    "CurrencyName": "Philippine Peso",
+    "Symbol": "₱",
+    "Flag": "https://flagpedia.net/data/flags/mini/ph.png",
+    "CountryName": "Philippines",
+    "Currency": "Philippine Peso",
+    "Code": "PHP"
+  },
+  {
+    "index": 89,
+    "CurrencyName": "Polish Zloty",
+    "Symbol": "zł",
+    "Flag": "https://flagpedia.net/data/flags/mini/pl.png",
+    "CountryName": "Poland",
+    "Currency": "Polish Zloty",
+    "Code": "PLN"
+  },
+  {
+    "index": 90,
+    "CurrencyName": "Euro",
+    "Symbol": "€",
+    "Flag": "https://flagpedia.net/data/flags/mini/pt.png",
+    "CountryName": "Portugal",
+    "Currency": "Euro",
+    "Code": "EUR"
+  },
+  {
+    "index": 91,
+    "CurrencyName": "Qatari Riyal",
+    "Symbol": "ر.ق",
+    "Flag": "https://flagpedia.net/data/flags/mini/qa.png",
+    "CountryName": "Qatar",
+    "Currency": "Qatari Riyal",
+    "Code": "QAR"
+  },
+  {
+    "index": 92,
+    "CurrencyName": "Romanian Leu",
+    "Symbol": "lei",
+    "Flag": "https://flagpedia.net/data/flags/mini/ro.png",
+    "CountryName": "Romania",
+    "Currency": "Romanian Leu",
+    "Code": "RON"
+  },
+  {
+    "index": 93,
+    "CurrencyName": "Russian Ruble",
+    "Symbol": "₽",
+    "Flag": "https://flagpedia.net/data/flags/mini/ru.png",
+    "CountryName": "Russia",
+    "Currency": "Russian Ruble",
+    "Code": "RUB"
+  },
+  {
+    "index": 94,
+    "CurrencyName": "Saudi Riyal",
+    "Symbol": "ر.س",
+    "Flag": "https://flagpedia.net/data/flags/mini/sa.png",
+    "CountryName": "Saudi Arabia",
+    "Currency": "Saudi Riyal",
+    "Code": "SAR"
+  },
+  {
+    "index": 95,
+    "CurrencyName": "Serbian Dinar",
+    "Symbol": "Дин.",
+    "Flag": "https://flagpedia.net/data/flags/mini/rs.png",
+    "CountryName": "Serbia",
+    "Currency": "Serbian Dinar",
+    "Code": "RSD"
+  },
+  {
+    "index": 96,
+    "CurrencyName": "Seychellois Rupee",
+    "Symbol": "₨",
+    "Flag": "https://flagpedia.net/data/flags/mini/sc.png",
+    "CountryName": "Seychelles",
+    "Currency": "Seychellois Rupee",
+    "Code": "SCR"
+  },
+  {
+    "index": 97,
+    "CurrencyName": "Singapore Dollar",
+    "Symbol": "$",
+    "Flag": "https://flagpedia.net/data/flags/mini/sg.png",
+    "CountryName": "Singapore",
+    "Currency": "Singapore Dollar",
+    "Code": "SGD"
+  },
+  {
+    "index": 98,
+    "CurrencyName": "Slovak Koruna",
+    "Symbol": "Sk",
+    "Flag": "https://flagpedia.net/data/flags/mini/sk.png",
+    "CountryName": "Slovakia",
+    "Currency": "Slovak Koruna",
+    "Code": "SKK"
+  },
+  {
+    "index": 99,
+    "CurrencyName": "Slovenian Tolar",
+    "Symbol": "Sl",
+    "Flag": "https://flagpedia.net/data/flags/mini/si.png",
+    "CountryName": "Slovenia",
+    "Currency": "Slovenian Tolar",
+    "Code": "SIT"
+  },
+  {
+    "index": 100,
+    "CurrencyName": "South African Rand",
+    "Symbol": "R",
+    "Flag": "https://flagpedia.net/data/flags/mini/za.png",
+    "CountryName": "South Africa",
+    "Currency": "South African Rand",
+    "Code": "ZAR"
+  },
+  {
+    "index": 101,
+    "CurrencyName": "South Korean Won",
+    "Symbol": "₩",
+    "Flag": "https://flagpedia.net/data/flags/mini/kr.png",
+    "CountryName": "South Korea",
+    "Currency": "South Korean Won",
+    "Code": "KRW"
+  },
+  {
+    "index": 102,
+    "CurrencyName": "Euro",
+    "Symbol": "€",
+    "Flag": "https://flagpedia.net/data/flags/mini/es.png",
+    "CountryName": "Spain",
+    "Currency": "Euro",
+    "Code": "EUR"
+  },
+  {
+    "index": 103,
+    "CurrencyName": "Sri Lankan Rupee",
+    "Symbol": "₨",
+    "Flag": "https://flagpedia.net/data/flags/mini/lk.png",
+    "CountryName": "Sri Lanka",
+    "Currency": "Sri Lankan Rupee",
+    "Code": "LKR"
+  },
+  {
+    "index": 104,
+    "CurrencyName": "Swedish Krona",
+    "Symbol": "kr",
+    "Flag": "https://flagpedia.net/data/flags/mini/se.png",
+    "CountryName": "Sweden",
+    "Currency": "Swedish Krona",
+    "Code": "SEK"
+  },
+  {
+    "index": 105,
+    "CurrencyName": "Swiss Franc",
+    "Symbol": "Fr.",
+    "Flag": "https://flagpedia.net/data/flags/mini/ch.png",
+    "CountryName": "Switzerland",
+    "Currency": "Swiss Franc",
+    "Code": "CHF"
+  },
+  {
+    "index": 106,
+    "CurrencyName": "Syrian Pound",
+    "Symbol": "£",
+    "Flag": "https://flagpedia.net/data/flags/mini/sy.png",
+    "CountryName": "Syria",
+    "Currency": "Syrian Pound",
+    "Code": "SYP"
+  },
+  {
+    "index": 107,
+    "CurrencyName": "Taiwan Dollar",
+    "Symbol": "NT$",
+    "Flag": "https://flagpedia.net/data/flags/mini/tw.png",
+    "CountryName": "Taiwan",
+    "Currency": "Taiwan Dollar",
+    "Code": "TWD"
+  },
+  {
+    "index": 108,
+    "CurrencyName": "Tajikistani Somoni",
+    "Symbol": "ЅМ",
+    "Flag": "https://flagpedia.net/data/flags/mini/tj.png",
+    "CountryName": "Tajikistan",
+    "Currency": "Tajikistani Somoni",
+    "Code": "TJS"
+  },
+  {
+    "index": 109,
+    "CurrencyName": "Tanzanian Shilling",
+    "Symbol": "TSh",
+    "Flag": "https://flagpedia.net/data/flags/mini/tz.png",
+    "CountryName": "Tanzania",
+    "Currency": "Tanzanian Shilling",
+    "Code": "TZS"
+  },
+  {
+    "index": 110,
+    "CurrencyName": "Thai Baht",
+    "Symbol": "฿",
+    "Flag": "https://flagpedia.net/data/flags/mini/th.png",
+    "CountryName": "Thailand",
+    "Currency": "Thai Baht",
+    "Code": "THB"
+  },
+  {
+    "index": 111,
+    "CurrencyName": "Trinidad and Tobago Dollar",
+    "Symbol": "TT$",
+    "Flag": "https://flagpedia.net/data/flags/mini/tt.png",
+    "CountryName": "Trinidad and Tobago",
+    "Currency": "Trinidad and Tobago Dollar",
+    "Code": "TTD"
+  },
+  {
+    "index": 112,
+    "CurrencyName": "Tunisian Dinar",
+    "Symbol": "د.ت",
+    "Flag": "https://flagpedia.net/data/flags/mini/tn.png",
+    "CountryName": "Tunisia",
+    "Currency": "Tunisian Dinar",
+    "Code": "TND"
+  },
+  {
+    "index": 113,
+    "CurrencyName": "Turkish Lira",
+    "Symbol": "₺",
+    "Flag": "https://flagpedia.net/data/flags/mini/tr.png",
+    "CountryName": "Turkey",
+    "Currency": "Turkish Lira",
+    "Code": "TRY"
+  },
+  {
+    "index": 114,
+    "CurrencyName": "Turkmenistani Manat",
+    "Symbol": "m",
+    "Flag": "https://flagpedia.net/data/flags/mini/tm.png",
+    "CountryName": "Turkmenistan",
+    "Currency": "Turkmenistani Manat",
+    "Code": "TMT"
+  },
+  {
+    "index": 115,
+    "CurrencyName": "Ugandan Shilling",
+    "Symbol": "USh",
+    "Flag": "https://flagpedia.net/data/flags/mini/ug.png",
+    "CountryName": "Uganda",
+    "Currency": "Ugandan Shilling",
+    "Code": "UGX"
+  },
+  {
+    "index": 116,
+    "CurrencyName": "Ukrainian Hryvnia",
+    "Symbol": "₴",
+    "Flag": "https://flagpedia.net/data/flags/mini/ua.png",
+    "CountryName": "Ukraine",
+    "Currency": "Ukrainian Hryvnia",
+    "Code": "UAH"
+  },
+  {
+    "index": 117,
+    "CurrencyName": " Arab Emirates Dirham",
+    "Symbol": "د.إ",
+    "Flag": "https://flagpedia.net/data/flags/mini/ae.png",
+    "CountryName": "United Arab Emirates",
+    "Currency": "United Arab Emirates Dirham",
+    "Code": "AED"
+  },
+  {
+    "index": 118,
+    "CurrencyName": "British Pound Sterling",
+    "Symbol": "£",
+    "Flag": "https://flagpedia.net/data/flags/mini/gb.png",
+    "CountryName": "United Kingdom",
+    "Currency": "British Pound Sterling",
+    "Code": "GBP"
+  },
+  {
+    "index": 119,
+    "CurrencyName": "United States Dollar",
+    "Symbol": "$",
+    "Flag": "https://flagpedia.net/data/flags/mini/us.png",
+    "CountryName": "United States",
+    "Currency": "United States Dollar",
+    "Code": "USD"
+  },
+  {
+    "index": 120,
+    "CurrencyName": "Uruguayan Peso",
+    "Symbol": "$U",
+    "Flag": "https://flagpedia.net/data/flags/mini/uy.png",
+    "CountryName": "Uruguay",
+    "Currency": "Uruguayan Peso",
+    "Code": "UYU"
+  },
+  {
+    "index": 121,
+    "CurrencyName": "Uzbekistani Som",
+    "Symbol": "лв",
+    "Flag": "https://flagpedia.net/data/flags/mini/uz.png",
+    "CountryName": "Uzbekistan",
+    "Currency": "Uzbekistani Som",
+    "Code": "UZS"
+  },
+  {
+    "index": 122,
+    "CurrencyName": "Venezuelan Bolivar",
+    "Symbol": "Bs.",
+    "Flag": "https://flagpedia.net/data/flags/mini/ve.png",
+    "CountryName": "Venezuela",
+    "Currency": "Venezuelan Bolivar",
+    "Code": "VES"
+  },
+  {
+    "index": 123,
+    "CurrencyName": "Vietnamese Dong",
+    "Symbol": "₫",
+    "Flag": "https://flagpedia.net/data/flags/mini/vn.png",
+    "CountryName": "Vietnam",
+    "Currency": "Vietnamese Dong",
+    "Code": "VND"
+  },
+  {
+    "index": 124,
+    "CurrencyName": "Yemeni Rial",
+    "Symbol": "﷼",
+    "Flag": "https://flagpedia.net/data/flags/mini/ye.png",
+    "CountryName": "Yemen",
+    "Currency": "Yemeni Rial",
+    "Code": "YER"
+  },
+  {
+    "index": 125,
+    "CurrencyName": "Zambian Kwacha",
+    "Symbol": "ZK",
+    "Flag": "https://flagpedia.net/data/flags/mini/zm.png",
+    "CountryName": "Zambia",
+    "Currency": "Zambian Kwacha",
+    "Code": "ZMW"
+  },
+  {
+    "index": 126,
+    "CurrencyName": "Zimbabwean Dollar",
+    "Symbol": "Z$",
+    "Flag": "https://flagpedia.net/data/flags/mini/zw.png",
+    "CountryName": "Zimbabwe",
+    "Currency": "Zimbabwean Dollar",
+    "Code": "ZWL"
+  }
+]
