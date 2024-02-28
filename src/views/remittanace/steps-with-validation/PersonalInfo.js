@@ -345,43 +345,6 @@ const PersonalInfo = ({ stepper, type, sharedData, updateSharedData}) => {
     })
   }
 
-  // const renderBeneficiariesList = () => {
-  //   if (transactionsArr.length === 0) {
-  //     return <div>No transactions yet</div>
-  //   } else {
-  //     return transactionsArr.map(item => {
-  //       return (
-  //         <div key = { item.title } className = 'transaction-item' >
-  //           <Media>
-  //             <Avatar className='rounded' color={item.color} icon={<item.Icon size={18} />} />
-  //             <Media body>
-  //               <h6 className='transaction-title'>{item.title}</h6>
-  //               <small>{item.subtitle}</small>
-  //             </Media>
-  //           </Media>
-  //           <div className={`font-weight-bolder ${item.down ? 'text-danger' : 'text-success'}`}>{item.amount}</div>
-  //         </div>
-  //       )
-  //     })
-  //   }
-  //   }
-  // const countryOptions = [
-  //   { value: 'UK', label: 'UK' },
-  //   { value: 'USA', label: 'USA' },
-  //   { value: 'Spain', label: 'Spain' },
-  //   { value: 'France', label: 'France' },
-  //   { value: 'Italy', label: 'Italy' },
-  //   { value: 'Australia', label: 'Australia' }
-  // ]
-
-  // const languageOptions = [
-  //   { value: 'English', label: 'English' },
-  //   { value: 'French', label: 'French' },
-  //   { value: 'Spanish', label: 'Spanish' },
-  //   { value: 'Italian', label: 'Italian' },
-  //   { value: 'Japanese', label: 'Japanese' }
-  // ]
-
   return (
     <Fragment>
       {/* <div className='content-header'>

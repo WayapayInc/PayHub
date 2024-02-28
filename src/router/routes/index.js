@@ -4,7 +4,7 @@ import DashboardRoutes from './Dashboards'
 const TemplateTitle = '%s - Payhub Admin Dashboard'
 
 // ** Default Route
-const DefaultRoute = '/dashboard'
+const DefaultRoute = '/dashboard/ecommerce'
 
 // ** Merge Routes
 const Routes = [

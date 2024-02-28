@@ -2,21 +2,28 @@ import { Fragment, useEffect, useState } from 'react'
 import classnames from 'classnames'
 import { isObjEmpty } from '@utils'
 import { useForm } from 'react-hook-form'
-import { ArrowLeft, ArrowRight } from 'react-feather'
-import { Label, FormGroup, Row, Col, Button, Form, Input, CustomInput } from 'reactstrap'
+import { ArrowLeft, ArrowRight, XCircle } from 'react-feather'
+import Avatar from '@components/avatar'
+import { Label, FormGroup, Row, Col, Button, Form, Input, CustomInput, Media, Toast, ToastBody, ToastHeader } from 'reactstrap'
 import Select, {components, createFilter} from 'react-select'
 import 'react-phone-number-input/style.css'
 import './../../../assets/scss/style.scss'
+import BeneficiaryModal from './../../components/modal/index'
 import PhoneInput from 'react-phone-number-input'
 import axios from 'axios'
-
+import {handleWarning} from './../../extensions/sweet-alert/index'
 const Address = ({ stepper, type, sharedData, updateSharedData}) => {
   const { register, errors, handleSubmit, trigger, watch:watchFormFields } = useForm(
     {
       // resolver: yupResolver(QuotationSchema)
     }
   )
-  // const BeneficiarySchema = yup.object().shape({})
+  const getInitials = (firstName, lastName) => {
+    const firstInitial = firstName ? firstName.charAt(0) : ''
+    const lastInitial = lastName ? lastName.charAt(0) : ''
+    return `${firstInitial}${lastInitial}`.toUpperCase()
+  }
+  const getFullName = (firstName,  lastName) => `${firstName || ''} ${lastName || ''}`
   const beneficiaryFields = watchFormFields([
     `address-${type}`,
     `landmark-${type}`,
@@ -61,20 +68,33 @@ const Address = ({ stepper, type, sharedData, updateSharedData}) => {
     { value : "INFLUENCER_PAYMENT", label : "Influencer Payment"}
   ]
   const [isBankService, setIsBankService] = useState(false)
-  const [isChecked, setIsChecked] = useState(true)
+  const [isChecked, setIsChecked] = useState()
+  const [modalOpen, setModalOpen] = useState(false)
   const [reason, setReason] = useState("EDUCATION")
   const apiUrl = process.env.REACT_APP_API_URL
-  
+  const [beneficiariesList, setBeneficiaryList] = useState([])
+  const [selectedBeneficiaryData, setSelectedBeneficiaryData] = useState(null)
+
   const headers = {
     "Content-Type": "application/json",
     Authorization: `Token ${localStorage.getItem('token')}`
   }
-
-  const handleCheckboxChange = (event) => {
-    setIsChecked(!isChecked)
-    console.log("Unchecked")
+  const fetchBeneficiaries = async () => {
+    try {
+      const serviceName = sharedData.quotation.payer.service.name
+      const beneficiaryCountry = sharedData.quotation.payer.country_iso_code
+      const payer =  sharedData.quotation.payer.id
+      console.log(payer)
+      const response = await axios.get(`${apiUrl}remit/beneficiary/`, {headers, params : {serviceName, beneficiaryCountry, payer}})
+      if (response.status === 200 && response.data.length > 0) {
+        const beneficiaries = response.data
+        console.log(beneficiaries)
+        setBeneficiaryList(beneficiaries)
+      }
+    } catch (error) {
+      console.log(error)
+    }
   }
-  
   const getService = () => {
     try {
       if (sharedData.quotation.payer.service.name === "BankAccount") {
@@ -92,106 +112,198 @@ const Address = ({ stepper, type, sharedData, updateSharedData}) => {
     setReason(e["value"])
     console.log(reason)
   }
-  const createBeneficiary = async () => {
-    try {
-      const beneficiaryData = {
-        firstname : watchedFields[`address-${type}`],
-        lastname : watchedFields[`landmark-${type}`],
-        service: sharedData.quotation.payer.service.name,
-        country_code:sharedData.quotation.payer.country_iso_code,
-        payer_id : sharedData.quotation.payer.id,
-        amount : sharedData.quotation.sent_amount
-        // destination_currency: selectedValue.Code
-      }
-      console.log(beneficiaryData)
-      const beneficiaryResponse = await axios.get(`${apiUrl}remit/beneficiary/`, {headers})
-
-    } catch {
-
-    }
-  }
-  const handleSaveBeneficiary = () => {
+  const handleSaveBeneficiary = async() => {
     // Assuming you have beneficiary data, replace this with your actual data
-    const beneficiaryData = {
-      // Your beneficiary data fields
-      name: 'Beneficiary Name',
-      accountNumber: 'Beneficiary Account Number'
-      // Add more fields as needed
-    }
-
-    if (isChecked) {
-      saveBeneficiaryToDB(beneficiaryData)
-    } else {
-      // Handle logic when the checkbox is not checked (optional)
-      console.log('Checkbox not checked. Beneficiary not saved.')
+    try {
+      if (isChecked) {
+        console.log("+++SHARED DATA++++++")
+        console.log(sharedData)
+        const beneficiaryData = {
+          firstname : beneficiaryFields[`address-${type}`],
+          lastname : beneficiaryFields[`landmark-${type}`],
+          account_type: sharedData.quotation.payer.service.name,
+          country_code:sharedData.quotation.payer.country_iso_code,
+          payer_id : sharedData.quotation.payer.id,
+          account_no : sharedData.account_no      // destination_currency: selectedValue.Code
+        }
+        const beneficiaryResponse = await axios.post(`${apiUrl}remit/beneficiary/`, beneficiaryData, {headers})
+        if (beneficiaryResponse.status === 201) {
+          console.log('Beneficiary saved successfully:', beneficiaryResponse.data)
+          updateSharedData((prevData) => ({
+            ...prevData,
+            beneficiary :  beneficiaryData
+          }))
+        } else {
+          console.error('Error saving beneficiary:', beneficiaryResponse.data)
+        // Handle the error scenario
+        }
+      } else {
+        console.log('Checkbox not checked. Beneficiary not saved.')
+      }
+    } catch (error) {
+      console.error('Error saving beneficiary:', error)
+      // Handle any unexpected errors
     }
   }
-  const createTransaction = async (formData) => {
+  const handleCheckboxChange = (event) => {
+    const isCheckedBox = event.target.checked
+    console.log(isCheckedBox)
+    setIsChecked(isCheckedBox)
+  }
+
+  const createTransaction =  async (formData) => {
     try {
       console.log(formData.amount)
       if (formData.amount > 1) {
         console.log("Transact")
+        console.log("is it updated?")
         // Make an API call to quotation API
-        const transactiontionResponse = await axios.post(`${apiUrl}remit/transaction/`, formData, {headers})
-        console.log("TRANSACTION RESPONSE", transactiontionResponse)
-        return transactiontionResponse
+        const transactionResponse = await axios.post(`${apiUrl}remit/transaction/`, formData, {headers})
+        console.log(transactionResponse.status)
+        if  (transactionResponse.status === 201) {
+          const transactionConfirmationData = {
+            firstname : transactionResponse.data.data.beneficiary.firstname,
+            lastname : transactionResponse.data.data.beneficiary.lastname,
+            purpose_of_remittance : transactionResponse.data.data.purpose_of_remittance,
+            transaction_id : transactionResponse.data.data.id,
+            credit_party_identifier : transactionResponse.data.data.credit_party_identifier
+          }
+          if (isObjEmpty(errors) && transactionResponse.status === 201) {
+            updateSharedData((prevData) => ({
+              ...prevData,
+              transaction : transactionConfirmationData
+            }))
+          }
+            // setSharedData({...sharedData , 'transactions': [...sharedData.transactions, transactiontionResponse.data] })
+        }
+        if (transactionResponse.status === 400) {
+          const errorMessage = transactionResponse.data.message
+          console.log(errorMessage)
+          handleWarning()
+          console.log(transactionResponse.data)
+        }
+        return transactionResponse
         //Handle transaction success
       } else {
         console.log("Insufficient balance")
       }
     } catch (e) {
-      console.log(e)
+        handleWarning()
+        console.log(e)
 
     }
   }
   useEffect(() => {
     getService()
+    fetchBeneficiaries()
 
   }, [sharedData])
 
-  // const handleInputChange = (e) => {
-  //   console.log()
-  // }
+  const toggleModal = () => {
+    console.log("+++SHARED DATA++++++")
+    console.log(sharedData)
+    setModalOpen(!modalOpen)
+  }
+  const handleBeneficiarySelect = async (beneficiaryData) => {
+    console.log(beneficiaryData)
+    setSelectedBeneficiaryData(beneficiaryData)
+    if (beneficiaryData !== null) {
+      updateSharedData((prevData) => ({
+        ...prevData,
+        beneficiary : beneficiaryData
+      }))
+      console.log("++BEN SELECT++")
+      console.log(sharedData)
+      const transact_data = {
+        firstname : beneficiaryData.firstname,
+        lastname : beneficiaryData.lastname,
+        quotation_id : sharedData.quotation.id,
+        payer_id : sharedData.quotation.payer.id,
+        account_no: beneficiaryData.account_no,
+        servicename: sharedData.quotation.payer.service.name,
+        amount : sharedData.quotation.source.amount,
+        destination_currency: sharedData.quotation.destination.currency,
+        country_iso_code : sharedData.quotation.payer.country_iso_code,
+        purpose_of_remittance : reason
+      }
+      console.log(transact_data)
+      const transact = await createTransaction(transact_data)
+      console.log("HERE IS THE TRANSACTION")
+      console.log(transact)
+      // console.log(transact.status)
+      toggleModal()
+      stepper.next()
+      //call transactionapi and update the sharedData
+    }
+  }
+  const handleContinue = (selectedBeneficiaryIndex) => {
+    console.log('Selected Beneficiary Index:', selectedBeneficiaryIndex)
+
+  }
+  const handleRemoveSelectedBeneficiary = () => {
+    console.log("Removing Selected Beneficiary")
+    setSelectedBeneficiaryData(null)
+  }
+  const close = (
+    <button type='button' className='ml-1 close'  onClick={handleRemoveSelectedBeneficiary}>
+      <span>×</span>
+    </button>
+  )
 
   const onSubmit = async () => {
     try {
-      trigger()
-      if (isChecked) {
+      console.log("FROM SUBMIT BUTTON")
+      console.log(selectedBeneficiaryData)
+      if (selectedBeneficiaryData === null) {
         const transactionData = {
             firstname : beneficiaryFields[`address-${type}`],
             lastname : beneficiaryFields[`landmark-${type}`],
             quotation_id : sharedData.quotation.id,
             payer_id : sharedData.quotation.payer.id,
-            account: sharedData.account,
+            account_no: beneficiaryFields[`account-number-${type}`],
             servicename: sharedData.quotation.payer.service.name,
             amount : sharedData.quotation.source.amount,
             destination_currency: sharedData.quotation.destination.currency,
             country_iso_code : sharedData.quotation.payer.country_iso_code,
             purpose_of_remittance : reason
         }
-        console.log(transactionData)
         const transactionResponse = await createTransaction(transactionData)
+        // console.log("==========")
         console.log(transactionResponse)
-        const transactionConfirmationData = {
-          firstname : transactionResponse.data.data.beneficiary.firstname,
-          lastname : transactionResponse.data.data.beneficiary.lastname,
-          purpose_of_remittance : transactionResponse.data.data.purpose_of_remittance,
-          transaction_id : transactionResponse.data.data.id,
-          credit_party_identifier : transactionResponse.data.data.credit_party_identifier
-
+        // const transactionConfirmationData = {
+        //   firstname : transactionResponse.data.data.beneficiary.firstname,
+        //   lastname : transactionResponse.data.data.beneficiary.lastname,
+        //   purpose_of_remittance : transactionResponse.data.data.purpose_of_remittance,
+        //   transaction_id : transactionResponse.data.data.id,
+        //   credit_party_identifier : transactionResponse.data.data.credit_party_identifier
+        // }
+        // if (isObjEmpty(errors) && transactionResponse.status === 201) {
+        //   updateSharedData((prevData) => ({
+        //     ...prevData,
+        //     transaction : transactionConfirmationData
+        //   }))
+        //   console.log("========Beneficiary=========")
+        //   console.log(sharedData)
+        if (isChecked) {
+          trigger()
+          console.log("BENEFICIARY SAVED ON SUBMIT")
+          const beneficiaryRes = handleSaveBeneficiary()
+          if (beneficiaryRes.status === 201) {
+            console.log("Beneficiary added successfully")
+          }           
+          // Handle an error that results from saving the beneficiary
+        }  else {
+          console.log("Button is not checked")
         }
-        if (isObjEmpty(errors) && transactionResponse.status === 201) {
-          updateSharedData((prevData) => ({
-            ...prevData,
-            transaction : transactionConfirmationData
-          }))
-          console.log(sharedData)
+        stepper.next()
+        } else {
           stepper.next()
+          console.log("Went back to previous step")
         }
-      } else {
-
-
-      }
+      // } else {
+      //   console.log("This part is what is Running")
+      //   stepper.next()
+      // }
     } catch (e) {
       console.log(e)
 
@@ -204,6 +316,26 @@ const Address = ({ stepper, type, sharedData, updateSharedData}) => {
         <h5 className='mb-0'>Beneficiary</h5>
         <small>Add Beneficiary Details</small>
       </div>
+      {/* Conditionally render the "Choose beneficiary" button */}
+      { beneficiariesList.length > 0 && (
+      <Button.Ripple className='mt-70 mb-0' color='secondary' size='sm' outline onClick={toggleModal}>
+              Choose beneficiary
+      </Button.Ripple>
+      )}
+      <BeneficiaryModal isOpen={modalOpen} toggleModal={toggleModal} beneficiariesList={beneficiariesList} onBeneficiarySelect = {handleBeneficiarySelect} onContinue={handleContinue} />
+      {selectedBeneficiaryData && (
+        <Toast>
+          <ToastHeader close={close}>Beneficiary</ToastHeader>
+          <Media className='align-items-center'>
+            <Avatar className='ml-50 mb-1' color='light-primary' content={getInitials(selectedBeneficiaryData.firstname, selectedBeneficiaryData.lastname)} />
+             {/* <Avatar img={ceo} imgHeight={38} imgWidth={38} /> */}
+             <Media className='ml-50' body>
+              <h6>{getFullName(selectedBeneficiaryData.firstname, selectedBeneficiaryData.lastname)}</h6>
+              <span>{selectedBeneficiaryData.account_no}</span>
+            </Media>
+          </Media>
+        </Toast>
+      )}
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Row>
           <FormGroup tag={Col} md='6'>
@@ -248,22 +380,22 @@ const Address = ({ stepper, type, sharedData, updateSharedData}) => {
                     onChange={(value) => {
                       updateSharedData((prevData) => ({
                         ...prevData,
-                        account:beneficiaryFields[`account-number-${type}`]
+                        account_no:beneficiaryFields[`account-number-${type}`]
                       }))
                     }}
                   />
               ) : (
                 <Input
                     type='number'
-                    name={`phonenumber-${type}`}
-                    id={`phonenumber-${type}`}
+                    name={`account-number-${type}`}
+                    id={`account-number-${type}`}
                     placeholder='254-718-890-544'
                     innerRef={register({ required: true })}
-                    className={classnames({ 'is-invalid': errors[`phonenumber-${type}`] })}
+                    className={classnames({ 'is-invalid': errors[`account-number-${type}`] })}
                     onChange={(event) => {
                       updateSharedData((prevData) => ({
                         ...prevData,
-                        account:beneficiaryFields[`phonenumber-${type}`]
+                        account_no:beneficiaryFields[`account-number-${type}`]
                       }))
                     }}
                   />
@@ -310,9 +442,9 @@ const Address = ({ stepper, type, sharedData, updateSharedData}) => {
             <CustomInput className='mb-3' inline type='checkbox' 
               name={`save-beneficiary-status-${type}`}
               id={`save-beneficiary-status-${type}`}
-              innerRef={register({ required: true })}
+              innerRef={register({ required: false })}
               label='Save Beneficiary'  
-              defaultChecked={true}
+              defaultChecked={false}
               onChange = {handleCheckboxChange}
            />
           </div>
@@ -322,7 +454,7 @@ const Address = ({ stepper, type, sharedData, updateSharedData}) => {
             <ArrowLeft size={14} className='align-middle mr-sm-25 mr-0'></ArrowLeft>
             <span className='align-middle d-sm-inline-block d-none'>Previous</span>
           </Button.Ripple>
-          <Button.Ripple type='submit' color='primary' className='btn-next'>
+          <Button.Ripple type='submit' color='primary' className='btn-next' >
             <span className='align-middle d-sm-inline-block d-none'>Next</span>
             <ArrowRight size={14} className='align-middle ml-sm-25 ml-0'></ArrowRight>
           </Button.Ripple>

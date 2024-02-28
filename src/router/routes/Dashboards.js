@@ -3,10 +3,11 @@ import { lazy } from 'react'
 const DashboardRoutes = [
   // Dashboards
   {
-    path: '/home',
-    component: lazy(() => import('../../views/dashboard/ecommerce')),
+    path: '/dashboard',
+    component: lazy(() => import('../../views/Home')),
     exact: true
   }
 ]
+console.log("This page is stressing me")
 
 export default DashboardRoutes

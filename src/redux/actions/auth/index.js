@@ -2,7 +2,11 @@
 import useJwt from '@src/auth/jwt/useJwt'
 
 // const config = useJwt.jwtConfig
-
+const apiUrl = process.env.REACT_APP_API_URL
+const headers = {
+  "Content-Type": "application/json",
+  Authorization: `Token ${localStorage.getItem('token')}`
+}
 // ** Handle User Login
 export const handleLogin = data => {
   console.log("FROM REDUX")
@@ -22,12 +26,30 @@ export const handleLogin = data => {
 
 // ** Handle User Logout
 export const handleLogout = () => {
-  return dispatch => {
-    dispatch({ type: 'LOGOUT', [config.storageTokenKeyName]: null, [config.storageRefreshTokenKeyName]: null })
+  return async (dispatch) => {
+    try {
+      // Make a request to the logout endpoint
+      // const transactiontionResponse = await axios.get(`${apiUrl}logout/`, {headers})
+      const response = await fetch(`${apiUrl}logout/`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Token ${localStorage.getItem('token')}` // Include the token in headers
+        }
+      })
+      if (response.status === 200) {
+        dispatch({ type: 'LOGOUT', [localStorage.getItem('token')]: null})
 
-    // ** Remove user, accessToken & refreshToken from localStorage
-    localStorage.removeItem('userData')
-    localStorage.removeItem(config.storageTokenKeyName)
-    localStorage.removeItem(config.storageRefreshTokenKeyName)
+        // ** Remove user, accessToken from localStorage
+        localStorage.removeItem('userData')
+        localStorage.removeItem('token')
+      } else {
+        // Handle logout failure
+        toast.warning('Logout failed')
+      }
+    } catch (error) {
+      console.error('Error:', error)
+      toast.warning(error.message || 'Logout failed')
+    }
   }
 }

@@ -20,6 +20,7 @@ import '@styles/base/pages/dashboard-ecommerce.scss'
 const EcommerceDashboard = () => {
   const { colors } = useContext(ThemeColors),
     trackBgColor = '#e9ecef'
+  console.log("Page returned")
 
   return (
     <div id='dashboard-ecommerce'>

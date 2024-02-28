@@ -6,7 +6,8 @@ import { Row, Col, CardTitle, CardText, Form, FormGroup, Label, Input, CustomInp
 import '@styles/base/pages/page-auth.scss'
 import React, {useState} from 'react'
 import { error } from 'jquery'
-import {toast} from 'react-toastify'
+import {ToastContainer, toast} from 'react-toastify'
+import  'react-toastify/dist/ReactToastify.css'
 
 const Login = () => {
   const [skin, setSkin] = useSkin()
@@ -57,15 +58,19 @@ const Login = () => {
           toast.success("Login Successful!")
         }
         } else {
+
           //Handle authentication failure
           console.log(res.data.message)
           history.push('/misc/not-authorized')
+          toast.warning("Not authorized")
            
         } 
-      } catch (err) {
+    } catch (err) {
+
         console.error('Error:', error)
+        toast.warning(error)
         // Handle the error, e.g., display an error message.
-      }
+    }
   }
 
   return (

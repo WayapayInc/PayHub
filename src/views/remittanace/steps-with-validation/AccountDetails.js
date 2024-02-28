@@ -55,7 +55,59 @@ const AccountDetails = ({ stepper, type, sharedData, updateSharedData }) => {
   const [quotationData, setQuotationData] = useState({})
   const [showCustomDiv, setShowCustomDiv] = useState(false)
 
-  
+  //Handle GetPayment method
+  const getQuotation = async (amount) => {
+    try {
+      // check if there are any validation errors
+      // senderAmount = watchedFields[`source-amount-${type}`]
+      if (Number(amount) > 1) {
+        // trigger()
+        console.log(payer, selectedValue.IsoCode, amount)
+        console.log(selectedValue.Code)
+        //Create a quotation 
+        const formData = {
+          mode : "SOURCE_AMOUNT",
+          payer_id : payer,
+          amount : watchedFields[`source-amount-${type}`],
+          destination_currency: selectedValue.Code
+        }
+        // Make an API call to quotation API
+        const quotationResponse = await axios.post(`${apiUrl}remit/quotation/`, formData, {headers})
+        console.log("QUOTATION RESPONSE", quotationResponse)
+         // Handle the API response
+        if (!('errors' in quotationResponse.data.data)) {
+          setQuotationData(quotationResponse.data.data)
+          setShowCustomDiv(true)
+          return true
+        } else {
+          setShowCustomDiv(false)
+          }
+      }
+    } catch (err) {}
+  }
+  const handleAmountChange = (e) => {
+    console.log(watchedFields[`source-amount-${type}`])
+    setSenderAmount(watchedFields[`source-amount-${type}`])
+  }
+  const handleServiceChange = (e) => {
+    console.log("Service ID", e["value"])
+    setServiceType(e["value"])
+  }
+  const handleCurrencyChange = (e, type) => {
+    console.log('Outside the if statements ->', e)
+    // const currency = e.target.value
+    if (type === 'to') {
+      // Extract the value of e every time the users picks another option from the dropdown
+      setToCurrency(e)
+      setSelectedValue(e)
+      setDefaultFlag(e)
+    } else {
+        // setToCurrency(e["CountryName"])
+        console.log('Currency', toCurrency)
+    }
+    // setExchangeRate(1.2)
+    // setRecipientAmount((senderAmount * exchangeRate).toFixed(2))
+  }
   const getPaymentPartner = async () => {
     try {
       // const partnerResponse = await axios.get(`${apiUrl}remit/payers/${serviceType}/${toCurrency.Code}`, {headers})
@@ -76,7 +128,6 @@ const AccountDetails = ({ stepper, type, sharedData, updateSharedData }) => {
       Error('Failed to fetch Partners')
     }
   }
-  //Handle GetPayment method
   const getReceiveMethods = async () => {
     try {
 
@@ -103,55 +154,32 @@ const AccountDetails = ({ stepper, type, sharedData, updateSharedData }) => {
         Error('Failed to fetch Payment Methods')
     }
   }
-  const getQuotation = async (amount) => {
-    try {
-      // check if there are any validation errors
-      // senderAmount = watchedFields[`source-amount-${type}`]
-      if (Number(amount) > 1) {
-        // trigger()
-        console.log(payer, selectedValue.IsoCode, amount)
-        //Create a quotation 
-        const formData = {
-          mode : "SOURCE_AMOUNT",
-          payer_id : payer,
-          amount : watchedFields[`source-amount-${type}`],
-          destination_currency: selectedValue.Code
-        }
-        // Make an API call to quotation API
-        const quotationResponse = await axios.post(`${apiUrl}remit/quotation/`, formData, {headers})
-        console.log("QUOTATION RESPONSE", quotationResponse)
-         // Handle the API response
-        if (!('errors' in quotationResponse.data.data)) {
-          setQuotationData(quotationResponse.data.data)
-          setShowCustomDiv(true)
-          return true
-        } else {
-          setShowCustomDiv(false)
-          }
-      }
-    } catch (err) {}
-  }
-
-  
   const getCountriesList = async () => {
     try {
       const countries = await axios.get(`${apiUrl}remit/countries/`, {headers})
 
       if (countries && countries.data) {
-
         const countryOptions = countries.data.data.map(method => ({
           value: method.iso_code,
           label: method.name
         }))
-
-        const filteredFlags = flags.filter((e) => {
-          const flag = countryOptions.map((i) => {
-            e.IsoCode = i.value
-            return i
-          }).find(f => f.label === e.CountryName)
-          return flag
-        }) 
-        setFlagsArray(filteredFlags)  
+        const filteredFlags = flags.filter(flag => {
+          const countryOption = countryOptions.find(option => option.label === flag.CountryName)
+          if (countryOption) {
+            flag.IsoCode = countryOption.value
+            return true // Include the flag in the filteredFlags array
+          }
+          return false // Exclude the flag from the filteredFlags array
+        })
+        console.log(filteredFlags)
+        // const filteredFlags = flags.filter((e) => {
+        //   const flag = countryOptions.map((i) => {
+        //     e.IsoCode = i.value
+        //     return i
+        //   }).find(f => f.label === e.CountryName)
+        //   return flag
+        // }) 
+        setFlagsArray(filteredFlags)
         setDefaultFlag(filteredFlags.find(f => f.IsoCode === "KEN"))
 
         getReceiveMethods()
@@ -164,27 +192,6 @@ const AccountDetails = ({ stepper, type, sharedData, updateSharedData }) => {
         console.log("Error in getting Countries List")
         Error('Failed to fetch Country list')
         }
-  }
-  const handleAmountChange = (e) => {
-    console.log(watchedFields[`source-amount-${type}`])
-    setSenderAmount(watchedFields[`source-amount-${type}`])
-  }
-  const handleServiceChange = (e) => {
-    console.log("Service ID", e["value"])
-    setServiceType(e["value"])
-  }
-  const handleCurrencyChange = (e, type) => {
-    console.log('Outside the if statements ->', e)
-    // const currency = e.target.value
-    if (type === 'to') {
-      // Extract the value of e every time the users picks another option from the dropdown
-      setToCurrency(e)
-    } else {
-        // setToCurrency(e["CountryName"])
-        console.log('Currency', toCurrency)
-    }
-    // setExchangeRate(1.2)
-    // setRecipientAmount((senderAmount * exchangeRate).toFixed(2))
   }
   const handlePayerChange = (e) => {
     // Update the selected payer
@@ -240,12 +247,14 @@ const AccountDetails = ({ stepper, type, sharedData, updateSharedData }) => {
       console.log("Form submitted 🎈")
       // Update the shared data
       //check if quotation data has an object payer with a key name
-      
+      console.log(typeof quotationData.payer.service)
       if (typeof quotationData.payer.service === "object") {
         updateSharedData((prevData) => ({
           ...prevData,
           quotation : quotationData
         }))
+        console.log("+++SHARED DATA++++++")
+        console.log(sharedData)
         stepper.next()
       } else {
         alert('Please select a valid Payer')
@@ -364,7 +373,7 @@ const AccountDetails = ({ stepper, type, sharedData, updateSharedData }) => {
                     <Circle size={15} className='text-primary' />
                     <span className='font-weight-bold ml-75'>Exhange Rate</span>
                   </div>
-                  <span>{quotationData.wholesale_fx_rate} {toCurrency.IsoCode}</span>
+                  <span>{quotationData.wholesale_fx_rate.toFixed(2)} {toCurrency.IsoCode}</span>
                 </div>
                 <div className='d-flex justify-content-between mb-1'>
                   <div className='d-flex align-items-center'>

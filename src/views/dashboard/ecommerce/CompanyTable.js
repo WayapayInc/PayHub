@@ -1,24 +1,30 @@
 import Avatar from '@components/avatar'
 import { Table, Card } from 'reactstrap'
-import { Monitor, Coffee, Watch, TrendingUp, TrendingDown } from 'react-feather'
+import ReactPaginate from 'react-paginate'
+import { ChevronDown } from 'react-feather'
 import React, {useState, useEffect} from 'react'
-
-
+import { formatDateToMonthShort, formatDate} from '../../../utility/Utils'
 const CompanyTable = () => {
   const [transactionsArr, setTransactionsArr] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [currentPage, setCurrentPage] = useState(0)
+  const pageSize = 10
   const apiUrl = process.env.REACT_APP_API_URL
-  
+  const sortedTransactions = transactionsArr.sort((a, b) => new Date(b.creation_date) - new Date(a.creation_date))
+  const capitalizeFirstLetter = (str) => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase()
   const headers = {
     "Content-Type": "application/json",
     Authorization: `Token ${localStorage.getItem('token')}`
   }
   const colorsArr = {
     FAILED: 'light-primary',
-    CREATED: 'light-success',
-    PENDING: 'light-warning'
+    reated: 'light-success',
+    PENDING: 'light-warning',
+    DECLINED:  'light-danger'
   }
+  const offset = currentPage *  pageSize
+  const currentPageData = sortedTransactions.slice(offset, offset + pageSize)
   useEffect(() => {
     const fetchTransactions = async () => {
       try {
@@ -45,7 +51,14 @@ const CompanyTable = () => {
   }, [])
 
   const renderData = () => {
-    return transactionsArr.map(col => {
+    if (currentPageData.length === 0) {
+      return (
+        <tr>
+          <td colSpan="7" className="text-center">No transactions yet</td>
+        </tr>
+      )
+    }
+    return currentPageData.map(col => {
       // const IconTag = col.salesUp ? (
       //   <TrendingUp size={15} className='text-success' />
       // ) : (
@@ -56,12 +69,7 @@ const CompanyTable = () => {
         <tr key={col.id}>
           <td>
             <div className='d-flex align-items-center'>
-              <div className='avatar rounded'>
-                <div className='avatar-content'>
-                  <span>{col.id}</span>
-                  {/* <img src={col.img} alt={col.name} /> */}
-                </div>
-              </div>
+              
               <div>
                 <div className='font-weight-bolder'>{col.payer.name}</div>
                 <div className='font-small-2 text-muted'>{col.payer.service.name}</div>
@@ -71,27 +79,74 @@ const CompanyTable = () => {
           <td>
             <div className='d-flex align-items-center'>
               {/* <Avatar className='mr-1' color={colorsArr[col.status_message]} icon={col.icon} /> */}
-              <span color={colorsArr[col.status_message]}>{col.status_message}</span>
+              <span color={colorsArr[col.status_message]}>{capitalizeFirstLetter(col.status_message)}</span>
             </div>
           </td>
           <td className='text-nowrap'>
             <div className='d-flex flex-column'>
-              <span className='font-weight-bolder mb-25'>{col.payer.country_iso_code}</span>
+              <span className=' mb-25'>{col.payer.country_iso_code}</span>
               {/* <span className='font-small-2 text-muted'>in {col.purpose_of_remitance}</span> */}
             </div>
           </td>
           <td>${col.amount}</td>
           <td>
             <div className='d-flex align-items-center'>
-              <span className='font-weight-bolder mr-1'> {col.purpose_of_remitance}</span>
+              <span className='font-weight-bolder mr-1'> {capitalizeFirstLetter(col.purpose_of_remitance)}</span>
             </div>
           </td>
-          <td>{col.creation_date}</td>
+          <td>{formatDateToMonthShort(col.creation_date, false)}</td>
           <td>{col.fee.amount}</td>
         </tr>
       )
     })
   }
+  const handlePageClick = ({selected}) => {
+    setCurrentPage(selected)
+  }
+  const Previous = () => {
+    return (
+      <Fragment>
+        <span className='align-middle d-none d-md-inline-block'>
+          <FormattedMessage id='Prev' />
+        </span>
+      </Fragment>
+    )
+  }
+
+  // ** Pagination Next Component
+  const Next = () => {
+    return (
+      <Fragment>
+        <span className='align-middle d-none d-md-inline-block'>
+          <FormattedMessage id='Next' />
+        </span>
+      </Fragment>
+    )
+  }
+
+  // ** Custom Pagination Component
+  const CustomPagination = () => (
+    <ReactPaginate
+      previousLabel={<Previous size={15} />}
+      nextLabel={<Next size={15} />}
+      forcePage={currentPage}
+      onPageChange={page => handlePagination(page)}
+      pageCount={searchValue.length ? filteredData.length / 7 : data.length / 7 || 1}
+      breakLabel={'...'}
+      pageRangeDisplayed={2}
+      marginPagesDisplayed={2}
+      activeClassName={'active'}
+      pageClassName={'page-item'}
+      nextLinkClassName={'page-link'}
+      nextClassName={'page-item next'}
+      previousClassName={'page-item prev'}
+      previousLinkClassName={'page-link'}
+      pageLinkClassName={'page-link'}
+      breakClassName='page-item'
+      breakLinkClassName='page-link'
+      containerClassName={'pagination react-paginate pagination-sm justify-content-end pr-1 mt-1'}
+    />
+  )
 
   return (
     <Card className='card-company-table'>
@@ -109,6 +164,21 @@ const CompanyTable = () => {
         </thead>
         <tbody>{renderData()}</tbody>
       </Table>
+      {/* Pagination */}
+      <ReactPaginate
+        previousLabel={"Previous"}
+        nextLabel={"Next"}
+        pageCount={Math.ceil(transactionsArr.length / pageSize)}
+        onPageChange={handlePageClick}
+        containerClassName={"pagination"}
+        activeClassName={"active"}
+        previousClassName={"page-item"}
+        nextClassName={"page-item"}
+        previousLinkClassName={"page-link"}
+        nextLinkClassName={"page-link"}
+        disabledClassName={"disabled"}
+        paginationComponent={CustomPagination}
+      />
     </Card>
   )
 }
